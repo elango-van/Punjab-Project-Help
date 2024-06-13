@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+
+</head>
+
+<body>
+    <style>
+        #divprogressbar {
+            position: absolute;
+            width: 30%;
+            right: 0px;
+            bottom: 0px;
+            border: 1px ridge #ccc;
+            background-color: steelblue;
+            border-radius: 5px;
+        }
+
+        .progress {
+            /* height: 50px; */
+            margin-bottom: unset;
+            border-radius: 5px;
+        }
+
+        .progress-bar.indeterminate {
+            position: relative;
+            border-radius: 5px;
+            animation: progress-indeterminate 2s linear infinite;
+        }
+
+        @keyframes progress-indeterminate {
+            from {
+                left: -25%;
+                width: 20%;
+            }
+
+            to {
+                left: 100%;
+                width: 20%;
+            }
+        }
+    </style>
+    <div id="divprogressbar" style="padding: 20px">
+        <div class="progress" style="position: relative;">
+            <div class="progress-bar progress-bar-striped indeterminate">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

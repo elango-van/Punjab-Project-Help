@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="mySelect" multiple style="width: 200px; height: 70px;"></select>
+    <script>
+        function createGroupWithOptions(groupLabel, optionValues, optionTexts) {
+            // Create the optgroup element
+            const optGroup = document.createElement('optgroup');
+            optGroup.label = groupLabel;
+
+            // Validate input lengths
+            if (optionValues.length !== optionTexts.length) {
+                console.error("Error: The lengths of optionValues and optionTexts arrays must be equal.");
+                return;
+            }
+
+            // Create and append options to the optgroup
+            for (let i = 0; i < optionValues.length; i++) {
+                const option = document.createElement('option');
+                option.value = optionValues[i];
+                option.text = optionTexts[i];
+                optGroup.appendChild(option);
+            }
+
+            // Append the optgroup to the select element
+            const select = document.getElementById('mySelect');
+            select.appendChild(optGroup);
+        }
+
+        // Example usage
+        createGroupWithOptions('Group 1', ['value1', 'value2', 'value3'], ['Option 1', 'Option 2', 'Option 3']);
+        createGroupWithOptions('Group 2', ['value4', 'value5'], ['Option 4', 'Option 5']);
+
+    </script>
+</body>
+
+</html>

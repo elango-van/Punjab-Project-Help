@@ -1,0 +1,20 @@
+DeptCode,DeptName
+1,Department of Agriculture
+2,Department of Animal Husbandry
+3,Department of Dairy Development
+4,Department of Fisheries
+5,Department of Forest and Wild Life Preservation
+6,Department of Health & Family Welfare
+7,Department of Horticulture
+8,Department of Housing and Urban Development
+9,Department of Industries and Commerce
+10,Department of Local Government
+11,Department of New & Renewable Energy Sources
+12,Department of Planning
+13,Department of Power
+14,Department of Rural Development and Panchayats
+15,Department of Science, Technology & Environment
+16,Department of Soil and Water Conservation
+17,Department of Transport
+18,Department of Water Resources
+19,Department of Water Supply and Sanitation

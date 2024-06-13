@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <style>
+    .progress {
+      position: absolute;
+      margin: 15px;
+      width: 98%;
+      border-radius: 10px;
+      background: #bebfbf;
+      height: 100px;
+    }
+
+    .progress .progress-bar {
+      border-radius: 10px;
+      box-shadow: none;
+      animation: animate-positive 2s;
+    }
+
+    .progress .progress-bar.active {
+      font-weight: 700;
+      animation: progress-bar-stripes .5s linear infinite;
+      height: 100px;
+    }
+
+    .progress-bar>span {
+      position: relative;
+      font-size: 70px;
+      margin-top: 40px;
+    }
+
+    .dotdotdot:after {
+      font-weight: 300;
+      content: '...';
+      display: inline-block;
+      width: 20px;
+      text-align: left;
+      animation: dotdotdot 1.5s linear infinite;
+    }
+
+    @keyframes dotdotdot {
+      0% {
+        content: '...';
+      }
+
+      25% {
+        content: '';
+      }
+
+      50% {
+        content: '.';
+      }
+
+      75% {
+        content: '..';
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+      aria-valuemax="100" style="width: 100%">
+      <span>Please wait<span class="dotdotdot"></span></span>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Dynamic Tabs</h2>
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+      <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+      <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+      <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+        <h3>HOME</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.</p>
+      </div>
+      <div id="menu1" class="tab-pane fade">
+        <h3>Menu 1</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div id="menu2" class="tab-pane fade">
+        <h3>Menu 2</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam.</p>
+      </div>
+      <div id="menu3" class="tab-pane fade">
+        <h3>Menu 3</h3>
+        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <style>
+    .progress-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #000;
+      margin: 0 0 10px;
+    }
+
+    .progress-outer {
+      background: #fff;
+      padding: 5px 5px 5px 5px;
+      border: 5px solid #bebfbf;
+      border-radius: 45px;
+      margin-bottom: 20px;
+      position: relative;
+      height: 100px;
+    }
+
+    .progress>span {
+      position: absolute;
+      text-align: center;
+    }
+
+
+    .progress .progress-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #6b7880;
+      position: absolute;
+      top: 3px;
+      right: 10px;
+    }
+
+    @keyframes animate-positive {
+      0% {
+        width: 0;
+      }
+    }
+  </style>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="progress-title">HTML5</h3>
+        <div class="progress-outer">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-danger active" style="width:100%;"></div>
+            <span>Please wait<span class="dotdotdot"></span></span>
+            <!-- <div class="progress-value"><span>15</span>%</div> -->
+          </div>
+        </div>
+        <h3 class="progress-title">CSS3</h3>
+        <div class="progress-outer">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-info" style="width:75%;"></div>
+            <span>Please wait<span class="dotdotdot"></span></span>
+            <!-- <div class="progress-value"><span>23</span>%</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+  <script>
+
+    $(document).ready(function () {
+      $('.progress-value > span').each(function () {
+        $(this).prop('Counter', 0).animate({
+          Counter: $(this).text()
+        }, {
+          duration: 1500,
+          easing: 'swing',
+          step: function (now) {
+            $(this).text(Math.ceil(now));
+          }
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .wrapper {
+      width: 500px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #e0e0e0;
+      padding: 3px;
+      border-radius: 3px;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    }
+
+    .progress-bar-fill {
+      display: block;
+      height: 22px;
+      background-color: #659cef;
+      border-radius: 3px;
+
+      transition: width 500ms ease-in-out;
+    }
+  </style>
+
+
+  <div class="wrapper">
+    <div class="progress-bar">
+      <span class="progress-bar-fill" style="width: 70%;"></span>
+    </div>
+  </div>
+
+</body>
+
+</html>

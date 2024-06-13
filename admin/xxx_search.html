@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <input id='myInput'>
+
+    <table id='myTable'>
+        <tr>
+            <td>AB</td>
+            <td>BC</td>
+        </tr>
+        <tr>
+            <td>CD</td>
+            <td>DE</td>
+        </tr>
+        <tr>
+            <td>EF</td>
+            <td>GH</td>
+        </tr>
+    </table>
+
+    <!-- HTML -->
+    <table id="dataTable">
+        <tr>
+            <th>Example No.</th>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+        <tr>
+            <td> 3512376894 </td>
+            <td>Test 1</td>
+            <td>one_test1@gmail.com</td>
+        </tr>
+        <tr>
+            <td>345678917</td>
+            <td>Test 2</td>
+            <td>two.test2@hotmail.com</td>
+        </tr>
+    </table>
+    <script>
+        var cells = document.querySelectorAll("#myTable td");
+        var search = document.getElementById("myInput");
+
+        search.addEventListener("keyup", function () {
+
+            for (var i = 0; i < cells.length; ++i) {
+                // This line checks for an exact match in a cell against what the
+                // user entered in the search box
+                //if(cells[i].textContent.toLowerCase() === search.value.toLowerCase()){
+
+                console.log([cells[i].textContent.toLowerCase(), search.value.toLowerCase()])
+                console.log(cells[i].textContent.toLowerCase().indexOf(search.value.toLowerCase()))
+
+                // This checks for cells that start with what the user has entered
+                if (cells[i].textContent.toLowerCase().trim().indexOf(search.value.toLowerCase().trim()) === 0 && search.value.toLowerCase().trim() !== '') {
+                    // cells.forEach(function (element) {
+                    //     element.style.display = "none";
+                    // });
+                    cells[i].style.background = "yellow";
+                    // cells[i].style.display = "table-cell";   
+                    // break;
+                } else {
+                    cells[i].style.background = "white";
+                    // cells[i].style.display = "block";
+                    // cells.forEach(function (element) {
+                    //     if (cells[i] !== element) {
+                    //         // element.style.display = "block";
+                    //         element.style.display = "table-cell";
+                    //     }
+                    // });
+                }
+            }
+
+        });
+
+        // JavaScript
+        window.onload = function () {
+            var term = "3512376894";                   // term you're searching for
+            var column = 0;                            // which column to search
+            var pattern = new RegExp(term, 'g');       // make search more flexible 
+            var table = document.getElementById('dataTable');
+            var tr = table.getElementsByTagName('TR');
+            for (var i = 0; i < tr.length; i++) {
+                var td = tr[i].getElementsByTagName('TD');
+                for (var j = 0; j < td.length; j++) {
+                    if (j == column && td[j].innerHTML.toLowerCase().trim() == term.toLowerCase().trim()) {
+                        td[j].style.background = "yellow";
+                        // for more flexibility use match() function and the pattern built above
+                        // if(j == column && td[j].innerHTML.match(pattern)){
+                        console.log('Found it: ' + td[j].innerHTML);
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- bootstrap core css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <!-- fonts style -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- font awesome style -->
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .form-select {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+            -moz-padding-start: calc(0.75rem - 3px);
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 16px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="top:500px;">
+        <form class="row g-3 needs-validation" novalidate>
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">First name</label>
+                <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="text" class="form-control" id="validationCustomUsername"
+                        aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">City</label>
+                <input type="text" class="form-control" id="validationCustom03" required>
+                <div class="invalid-feedback">
+                    Please provide a valid city.
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">State</label>
+                <select class="form-select" id="validationCustom04" aria-label="Default select example" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option>...</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select a valid state.
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom05" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="validationCustom05" required>
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>

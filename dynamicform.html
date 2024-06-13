@@ -1,0 +1,46 @@
+<html>
+<head>
+   <title>Create form dynamically with js</title>
+</head>
+   <body style="height: 90vh; width: 50%;display:flex;flex-direction: column;place-content: center; margin: auto;">
+   <p style="margin: 0 auto;">*Student registration form</p>
+   <button style="margin: 0.5rem auto;width: 10rem;" onclick="gForm()"> Generate Form </button>
+   <form id="dynamicForm"> </form>
+   <script>
+      gForm = () => {
+         var dform = document.getElementById("dynamicForm");
+         dform.setAttribute("style", "display:flex;flex-direction:column")
+         
+         // dform.innerHTML=""
+         var userName = document.createElement("input");
+         userName.setAttribute("placeholder", "Name");
+         dform.appendChild(userName);
+         var userEmail = document.createElement("input");
+         userEmail.setAttribute("placeholder", "Email");
+         userEmail.setAttribute("type", "email");
+         dform.appendChild(userEmail);
+         var userAdd = document.createElement("input");
+         userAdd.setAttribute("placeholder", "Address");
+         dform.appendChild(userAdd);
+         var userDob = document.createElement("input");
+         userDob.setAttribute("placeholder", "D.O.B");
+         userDob.setAttribute("type", "date");
+         dform.appendChild(userDob);
+         var userPhn = document.createElement("input");
+         userPhn.setAttribute("placeholder", "Phone number");
+         dform.appendChild(userPhn);
+         var sBtn = document.createElement("input");
+         sBtn.setAttribute("value", "submit");
+         sBtn.setAttribute("type", "submit");
+         var rBtn = document.createElement("input");
+         rBtn.setAttribute("value", "reset");
+         rBtn.setAttribute("type", "reset");
+         var btns = document.createElement("div");
+         btns.setAttribute("style","margin:0.4rem auto")
+         dform.appendChild(btns);
+         btns.appendChild(sBtn);
+         btns.appendChild(rBtn);
+      }
+   </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function iframeDidLoad() {
+            alert('Done');
+        }
+        var sites = ['http://getprismatic.com',
+                'http://gizmodo.com/',
+                'http://lifehacker.com/']
+        function newSite() {
+            document.getElementById('myIframe').src = sites[Math.floor(Math.random() * sites.length)];
+        }    
+    </script>
+    <input type="button" value="Change site" onClick="newSite()" />
+    <iframe id="myIframe" src="http://getprismatic.com/" onLoad="iframeDidLoad();"></iframe>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <style>
+        body {
+            font: 10px sans-serif;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        .x.axis text {
+            padding-top: 5px;
+            text-anchor: "right";
+        }
+
+        .line {
+            fill: none;
+            stroke-width: 1.5px;
+        }
+
+        .y.axis line,
+        .y.axis path {
+            stroke-dasharray: 2, 2;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function drawlinegraph(data, startDateString, endDateString, maxValue, minValue, colour,
+            divID, labels) {
+            var m = {
+                top: 60,
+                right: 0,
+                bottom: 35,
+                left: 80
+            },
+                w = 770 - m.left - m.right,
+                h = 180 - m.top - m.bottom,
+                dateFormat = "%Y-%m-%d";
+
+            labels = ["ada", "adas", "asdasdasd", "sd"];
+
+            var parseDate = d3.time.format(dateFormat).parse;
+
+            var startDate = parseDate(startDateString);
+            var endDate = parseDate(endDateString);
+
+            // Define the x scale
+            var x = d3.time.scale()
+                .domain([startDate, endDate])
+                .range([0, w]);
+
+            // Format x-axis labels
+            x.tickFormat(d3.time.format(dateFormat));
+
+            // Define the y scale
+            var y = d3.scale.linear()
+                .domain([minValue, maxValue])
+                .range([h, 0]);
+
+            var graph = d3.select(divID).append("svg:svg")
+                .attr("width", w + m.right + m.left)
+                .attr("height", h + m.top + m.bottom)
+                .append("svg:g")
+                .attr("transform", "translate(" + m.left + "," + m.top + ")");
+
+            // create x-axis
+            var xAxis = d3.svg.axis()
+                .scale(x)
+                .orient("bottom")
+                .ticks(4)
+                .tickSize(-h)
+                .tickFormat(d3.time.format("%Y/%m"));
+
+            // Add the x-axis.
+            graph.append("svg:g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + h + ")")
+                .call(xAxis);
+
+            // Overide the default behaviour of d3 axis labels
+            d3.selectAll(".x.axis g text")[0].forEach(function (e) {
+                e.attributes[0].value = 8; // y
+            });
+
+            // create y-axis
+            var yAxisLeft = d3.svg.axis()
+                .scale(y)
+                .ticks(12)
+                .orient("left")
+                .tickSize(-w);
+
+            // Add the y-axis to the left
+            graph.append("svg:g")
+                .attr("class", "y axis")
+                .attr("transform", "translate(0,0)")
+                .call(yAxisLeft);
+
+            var i = 0;
+            $.each(data, function (key, value) {
+                value.forEach(function (d) {
+                    d.date = parseDate(d.date);
+                });
+
+                var line = d3.svg.line()
+                    .x(function (d) {
+                        return x(d.date);
+                    })
+                    .y(function (d) {
+                        return y(d.value);
+                    });
+                graph.append("path")
+                    .datum(value)
+                    .attr("d", line)
+                    .attr("class", "line")
+                    .attr("stroke", colour[i]);
+                i++;
+            });
+
+            var legend = graph.append("g")
+                .attr("class", "legend")
+                .attr("height", 100)
+                .attr("width", 100)
+                .attr('transform', 'translate(-5,' + (h + 35) + ')');
+
+
+            legend.selectAll('rect')
+                .data(labels)
+                .enter()
+                .append("rect")
+                .attr("x", function (d, i) {
+                    var xPost = legendXPosition(labels, i, 6);
+                    return xPost;
+                })
+                .attr("y", -6)
+                .attr("width", 20)
+                .attr("height", 5)
+                .style("fill", function (d, i) {
+                    var color = colour[i];
+                    return color;
+                });
+
+            legend.selectAll('text')
+                .data(labels)
+                .enter()
+                .append("text")
+                .attr("x", function (d, i) {
+                    var xPost = legendXPositionText(labels, i, 22, 6);
+                    return xPost;
+                })
+                .attr("y", -1)
+                .text(function (d) {
+                    return d;
+                });
+        };
+
+        function legendXPositionText(data, position, textOffset, avgFontWidth) {
+            return legendXPosition(data, position, avgFontWidth) + textOffset;
+        }
+
+        function legendXPosition(data, position, avgFontWidth) {
+            if (position == 0) {
+                return 0;
+            } else {
+                var xPostiion = 0;
+                for (i = 0; i < position; i++) {
+                    xPostiion += (data[i].length * avgFontWidth + 40);
+                }
+                return xPostiion;
+            }
+        }
+
+        var benchmark_line_graph_colours = ["#524364", "#937ab1", "#ab5b02", "#faa757"],
+            benchmark_line_graph_data = {
+                "Beassa ALBI TR ZAR": [{
+                    "date": "2012-08-31",
+                    "value": 101.1
+                }, {
+                    "date": "2012-09-28",
+                    "value": 101.89
+                }, {
+                    "date": "2012-10-31",
+                    "value": 101.09
+                }],
+                "FTSE/JSE All Share TR ZAR": [{
+                    "date": "2012-08-31",
+                    "value": 99.72
+                }, {
+                    "date": "2012-09-28",
+                    "value": 101.24
+                }, {
+                    "date": "2012-10-31",
+                    "value": 105.29
+                }],
+                "STeFI Composite ZAR": [{
+                    "date": "2012-08-31",
+                    "value": 100.23
+                }, {
+                    "date": "2012-09-28",
+                    "value": 100.52
+                }, {
+                    "date": "2012-10-31",
+                    "value": 100.77
+                }],
+                "portfolio": [{
+                    "date": "2012-08-31",
+                    "value": 101.55
+                }, {
+                    "date": "2012-09-28",
+                    "value": 101.15
+                }, {
+                    "date": "2012-10-31",
+                    "value": 102.08
+                }]
+            };
+        drawlinegraph(benchmark_line_graph_data,
+            "2012-08-31",
+            "2012-10-31",
+            105.84700000000001,
+            99.163, benchmark_line_graph_colours,
+            "body");
+    </script>
+</body>
+
+</html>

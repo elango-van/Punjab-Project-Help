@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Codeply" />
+    <title>Codeply simple HTML/CSS/JS preview</title>
+    <base target="_self">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <button type="button" title="Usuń" class="deleteButton btn btn-default btn-xs"> Click here</button>
+
+    <div id="confirm" class="modal fade">
+        <div class="modal-content">
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("body").on('click', ".deleteButton", function (e) {
+            var clickedButton = $(this);
+            var guid = $(this).attr('ref');
+            e.preventDefault();
+            $('#confirm').modal({
+                backdrop: 'static',
+                keyboard: false
+            })
+                .one('click', '#delete', function () {
+                    clickedButton.attr("disabled", true);
+                    clickedButton.closest(singleValueAreaDivClass).remove();
+                });
+        });
+    </script>
+</body>
+
+</html>

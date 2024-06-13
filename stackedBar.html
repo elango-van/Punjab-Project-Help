@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <style>
+        svg {
+            font: 10px helvetica;
+            shape-rendering: crispEdges;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #c1c1c1;
+        }
+    </style>
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
+</head>
+
+<body>
+    <h2>Stacked Bar Chart</h2>
+    <script>
+
+        // Step 2
+        var margin = 50;
+        var width = 600;
+        height = 300;
+
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + margin + 40)
+            .attr("height", height + margin + 20)
+            .append("g")
+            .attr("transform", "translate(" + (margin + 30) / 2 + "," + margin / 2 + ")")
+
+        // Step 1
+        var data = [
+            { year: "2006", alex: "104", mindy: "152", sean: "90", karen: "162" },
+            { year: "2007", alex: "122", mindy: "184", sean: "99", karen: "143" },
+            { year: "2008", alex: "50", mindy: "201", sean: "127", karen: "114" },
+            { year: "2009", alex: "150", mindy: "134", sean: "139", karen: "80" }
+        ];
+
+        var colors = ["#C9D6DF", "#F7EECF", "#E3E1B2", "#F9CAC8"];
+
+        var dataset = d3.layout.stack()(["alex", "mindy", "sean", "karen"].map(function (fruit) {
+            return data.map(function (d) {
+                return { x: d3.time.format("%Y").parse(d.year), y: +d[fruit] };
+            });
+        }));
+
+        // Step 3
+        var xScale = d3.scale.ordinal()
+            .domain(dataset[0].map(function (d) { return d.x; }))
+            .rangeRoundBands([0, width], 0.5);
+
+        var yScale = d3.scale.linear()
+            .domain([0, 600])
+            .range([height, 0]);
+
+
+        // Step 4
+        var yAxis = d3.svg.axis()
+            .scale(yScale)
+            .orient("left")
+            .ticks(6)
+            .tickSize(-width, 0, 0)
+            .tickFormat(function (d) { return "$" + d });
+
+        var xAxis = d3.svg.axis()
+            .scale(xScale)
+            .orient("bottom")
+            .tickFormat(d3.time.format("%Y"));
+
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis);
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        // Step 5
+        // X label
+        svg.append('text')
+            .attr('x', width / 2)
+            .attr('y', height + 30)
+            .attr('text-anchor', 'middle')
+            .style('font-family', 'Helvetica')
+            .style('font-size', 12)
+            .text('Year');
+
+        // Y label
+        svg.append('text')
+            .attr('text-anchor', 'middle')
+            .attr('transform', 'translate(-30,' + height / 2 + ')rotate(-90)')
+            .style('font-family', 'Helvetica')
+            .style('font-size', 12)
+            .text('Sale');
+
+        // Step 6
+        var groups = svg.selectAll("g.bars")
+            .data(dataset)
+            .enter().append("g")
+            .attr("class", "bars")
+            .style("fill", function (d, i) { return colors[i]; })
+            .style("stroke", "#000");
+
+        var rect = groups.selectAll("rect")
+            .data(function (d) { return d; })
+            .enter()
+            .append("rect")
+            .attr("x", function (d) { return xScale(d.x); })
+            .attr("y", function (d) { return yScale(d.y0 + d.y); })
+            .attr("height", function (d) { return yScale(d.y0) - yScale(d.y0 + d.y); })
+            .attr("width", xScale.rangeBand())
+
+
+    </script>
+
+
+    <form action="#" method="POST">
+        <button class='btn btn-danger btn-xs' type="submit" name="remove_levels" value="delete"><span
+                class="fa fa-times"></span> delete</button>
+    </form>
+
+    <div id="confirm" class="modal">
+        <div class="modal-body">
+            Are you sure?
+        </div>
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+            <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+        </div>
+    </div>
+    <script>
+        $('#confirm').hide();
+        $('button[name="remove_levels"]').on('click', function (e) {
+            var $form = $(this).closest('form');
+            console.log($form)
+            e.preventDefault();
+            $('#confirm').modal({
+                backdrop: 'static',
+                keyboard: false
+            })
+                .on('click', '#delete', function (e) {
+                    $form.trigger('submit');
+                });
+            $("#cancel").on('click', function (e) {
+                e.preventDefault();
+                $('#confirm').modal.model('hide');
+            });
+
+        });
+    </script>
+</body>
+
+</html>

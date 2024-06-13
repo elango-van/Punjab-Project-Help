@@ -1,0 +1,23 @@
+Dist_2020,CenCode
+Amritsar,0315
+Barnala,0320
+Bathinda,0312
+Faridkot,0311
+Fatehgarh Sahib,0306
+Fazilka,0321
+Firozpur,0309
+Gurdaspur,0301
+Hoshiarpur,0304
+Jalandhar,0303
+Kapurthala,0302
+Ludhiana,0307
+Mansa,0313
+Moga,0308
+Muktsar,0310
+Pathankot,0322
+Patiala,0314
+Rupnagar,0317
+Sahibzada Ajit Singh Nagar,0318
+Sangrur,0319
+Shahid Bhagat Singh Nagar,0305
+Tarn Taran,0316

@@ -1,0 +1,82 @@
+Block2020,CenCode
+Baba Bakala,0315
+Amritsar II,0315
+Amritsar I,0315
+Ajnala,0315
+Gurdaspur,0301
+Batala,0301
+Dera Baba Nanak,0301
+Dhar Kalan,0322
+Pathankot,0322
+Patti,0316
+Tarn Taran,0316
+Khadur Sahib,0316
+Abohar,0321
+Fazilka,0321
+Jalalabad,0321
+Firozpur,0309
+Zira,0309
+Bagha Purana,0308
+Nihal Singhwala,0308
+Moga,0308
+Dharamkot,0308
+Jaitu,0311
+Kotkapura,0311
+Faridkot,0311
+Muktsar,0310
+Gidderbaha,0310
+Malout,0310
+Rampura Phul,0312
+Bathinda,0312
+Talwandi Sabo,0312
+Sardulgarh,0313
+Budhlada,0313
+Mansa,0313
+Moonak,0319
+Lehra,0319
+Sunam,0319
+Sangrur,0319
+Dhuri,0319
+Malerkotla,0319
+Rajpura,0314
+Nabha,0314
+Samana,0314
+Patran,0314
+Amloh,0306
+Fatehgarh Sahib,0306
+Bassi Pathana,0306
+Khamanon,0306
+Kharar,0318
+S.A.S. Nagar (Mohali),0318
+Dera Bassi,0318
+Nangal,0317
+Anandpur Sahib,0317
+Rupnagar,0317
+Chamkaur Sahib,0317
+Barnala,0320
+Tapa,0320
+Jagraon,0307
+Ludhiana (East),0307
+Ludhiana (West),0307
+Samrala,0307
+Khanna,0307
+Payal,0307
+Raikot,0307
+Shahkot,0303
+Jalandhar II,0303
+Jalandhar I,0303
+Phillaur,0303
+Nakodar,0303
+Bhulath,0302
+Kapurthala,0302
+Sultanpur Lodhi,0302
+Phagwara,0302
+Garhshankar,0304
+Hoshiarpur,0304
+Dasua,0304
+Mukerian,0304
+Balachaur,0305
+Nawanshahr,0305
+Banga,0305
+Guruharsahai,0309
+Patiala,0314

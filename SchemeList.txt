@@ -1,0 +1,163 @@
+SchemeCode,SchemeName,DeptCode
+1,Rashtriya Krishi Vikas Yojna (RKVY) (60:40),1
+2,Support to State Extension Programme (60:40) (NMAET) (Submission on Agriculture Extension),1
+3,Upgradation of Soil Health Labs under the National Project on Management of Soil Health and Fertility (60:40) (National mission for Sustainable Agriculture- NMSA,1
+4,National Food Security Mission (NFSM) (60:40),1
+5,Sub-mission on Agriculture Mechanization (60:40) (NMAET),1
+6,Parampragat Krishi Vikas Yojna (60:40) (NMSA),1
+7,Debt Relief to Farmers/Landless Labourers/Suicide effected families of farmers,1
+8,PANNI BACHAO PAISA KAMAO,1
+9,Compensation to farmers for stubble management,1
+10,Incentivizing Direct Seeding of Rice(DSR),1
+11,Crop Diversification Programme,1
+12,Promotion of Pulses in Punjab,1
+13,Agricultural Marketing Innovation Research and Intelligence Centre (AMIRIC) established at Kalkal Bhawan, Mohali (SAS Nagar),1
+14,Crop Residue Management,1
+15,An integrated facility for fruits and vegetable is being set up by Punjab Agri Export Corporation Ltd. at Abohar,1
+16,Upgradation of Veterinary institutions in the State under RIDFXVII(NABARD) (95:5),2
+17,Construction of buildings of tehsil and block level Veterinary Hospitals and other veterinary Hospitals in the State under RIDFXVIII (NABARD) (95:5),2
+18,Assistance to States for control of Animal diseases -Creation of disease free zone (60:40) (VSAH),2
+19,Foot and Mouth Disease Control Programme (60:40) (VSAH),2
+20,National Livestock Mission (60:40) NLM,2
+21,Provision of essential staff for remaining districts,3
+22,Strengthening of Punjab Dairy Development Board,3
+23,Promotion of Dairy farming as livelihood for SC beneficiaries,3
+24,Dairy Extension Training and Awareness,3
+25,Setting up of Dairy Units for Sustainable Livestock and employment generation,3
+26,Central Sector Scheme on Blue revolution - Integrated Development & Management of Fisheries(50:50),4
+27,Pradhan Mantri Matsya Sampada Yojana,4
+28,CONSERVATION MANAGEMENT & DEVELOPMENT OF WILDLIFE IN THE STATE,5
+29,REHABILITATION OF WATERLOGGED AND DEGRADED AREAS THROUGH BIO-DRAINAGE, AGRO FORESTRY AND OTHER PLANTATION ACTIVITIES IN PUNJAB (NABARD),5
+30,PUNJAB FORESTRY WATERSHED DEVELOPMENT PROJECT (PFWDP),5
+31,PLANTATION ALONG WITH MALWA REGION,5
+32,DEVELOPMENT OF FORESTS (13TH FINANCE COMMISSION),5
+33,ASSISTANCE TO STATE FOREST DEVELOPMENT AGENCY UNDER GREEN INDIA MISSION (GIM),5
+34,ASSISTANCE TO STATE FOREST DEVELOPMENT AGENCY (SFDA) UNDER NATIONAL AFFORESTATION PROGRAMME (NAP),5
+35,NATIONAL BAMBOO MISSION,5
+36,PUNJAB COMPENSATORY AFFORESTATION FUND MANAGEMENT AND PLANNING AUTHORITY. (PUNCAMPA),5
+37,Green Punjab Mission,5
+38,Fencing of wildlife sanctuaries/ Block forests (RKVY),5
+39,Establishment of Eucalyptus clonal nursery (RKVY),5
+40,On the auspicious occasion of 400th Parkash Utsav of Sri Guru Teg Bahadur Ji, 400 saplings will be planted in each village of the State,5
+41,Management and Development of Wildlife in the State,5
+42,Implementation of Emergency Response Services in the State,6
+43,Seed Corpus of Cancer Relief Fund,6
+44,Balri Rakshak Yojana,6
+45,Creation of Cancer and Drug addiction treatment infrastructure,6
+46,Manpower development under national mental hospital Amritsar (60:40),6
+47,Sarbat Sehat Bima Yojna,6
+48,ASHA''s and ASHA Facilitators Fixed honorarium (100% SS),6
+49,Setting up of Mohalla Clinics in Punjab,6
+50,Rural Family Welfare Services (Funding of 2858 Sub-Centres) (100%CS),6
+51,Mission Tandrust Punjab,6
+52,construction of 8 New Maternal and Child Health wings  at various districts,6
+53,new microbiology lab at FDA Kharar for testing both food and drug/medicines for biosafety measures and sterility,6
+54,Urban Family Welfare Services (100%CS),6
+55,Scheme for development of Mushroom Cultivation,7
+56,National Horticulture Mission (60:40) (MIDH),7
+57,Kamyaab Kisan Khushaal Punjab (K3P),7
+58,Scheduled Caste Sub Plan (SCSP) Scheme for S.C Beneficiaries (Land/Landless) under Silk SAMAGRA,7
+59,EWS Housing on Authority Land; EWS Private Project Housing Schemes; Regularisation Policy for standalone Project and Amnesty Policy for default in payment of instalments.,8
+60,Work on Heritage Street Near Qila Mubarak, Patiala,8
+61,Engagement of Young Professionals for Punjab State Planning Board,12
+62,Border Area Infrastructure Development Programme (Special Package for Border Area),12
+63,State Level Initiatives (Punjab Nirman Programme),12
+64,Setting up of Kandi Area Development Board” for integrated development of Kandi Area,12
+65,Border Area Development Programme (BADP) ACA,12
+66,Engagement of Young Professionals for Economic & Statistical Organisation,12
+67,Financial Assistance to Start-ups,9
+68,State Scheme for Make in India Zero defect & Zero effect of MSME,9
+69,State Scheme to promote Women entrepreneurship under standup India (WISH),9
+70,State scheme for awareness and Entrepreneurship Development to promote SC/STs under Stand up India Project,9
+71,Dedicated funds for meeting the state share for centrally sponsored schemes - assistance for promotion of Micro & Small Enterprises Cluster Development Programme (MSE-CDP),9
+72,SMART CITIES MISSION,10
+73,ATAL MISSION FOR REJUVENATION AND URBAN TRANSFORMATION (AMRUT),10
+74,SWACHH BHARAT MISSION-URBAN,10
+75,PUNJAB URBAN ENVIRONMENT IMPROVEMENT PROGRAMME (PUIEP),10
+76,EMPOWERING SLUM DWELLERS - BASERA,10
+77,NATIONAL URBAN LIVELIHOOD MISSION (NULM),10
+78,Canal Based Water Supply Project in Amritsar And Ludhiana,10
+79,Scheme for installation of High Mast Solar Powered Light in 750 rural stadium/playgrounds,11
+80,A Compressed Bio-Gas (CBG) project based on Paddy Straw of 33 TPD capacity shall be commissioned in District Sangrur,11
+81,SPV Water Pumping Programme under Pradhan Mantri Kissan Urja Surakhsha Evam Utthaan Mahabhiyan (PM-KUSUM Scheme) Solarization of agriculture pumps (Earlier SPV Water Pumping Programme under Jawaharlal Nehru Solar Mission),11
+82,Solar Cooker Programme for women in the State under Jawaharlal Nehru National Solar Mission (CS:SS:Benf) (30:40:30) (Direct Release),11
+83,Pilot Project of Solarisation in Bathinda,11
+84,Setting up of aggregate capacity of 100 MW standalone Biomass Power Projects and 25 MW Biomass Solar Hybrid Power Projects.,11
+85,Subsidy under Rural Electrification of Punjab Electricity Board,13
+86,Supply/Installation and commissioning of LEDs based SPV street lights under Solar Photovoltaic Demonstration Programme in Punjab (CS:SS:benf) (30:30:40) (EarlierSolar Photovoltaic Demonstration Programme in Punjab (30:30:40) (CS:SS:Benf) (Direct release),13
+87,Our Government would continue providing free electricity of 300 units per month upto 1KW to the freedom fighters category and 200 units per month upto 1KW to the SC, BC, non -SC BPL consumers. 24.31 lakh domestic consumers avail this subsidy,13
+88,Construction of 400KV sub-station at Dhanansu and BehmanJassa Singh,13
+89,Construction of 400 KV Substation at Ropar, additional 500 MVA at 400 KV Substation, Rajpura and augmention of 1 No. 315 MVA with 500 MVA at Nakodar.,13
+90,Construction work of new 400KV sub-station at Dhanansu and BehmanJassa Singh,13
+91,Strengthening/ Administration of DRDAs/Zila Parishads (60:40),14
+92,Shyama Prasad Mukherji Rurban Mission (60:40),14
+93,Integrated Watershed Management Programme (IWMP) (90:10) now Pradhan Mantri Krishi Sinchay Yojana PMKSY) (60:40),14
+94,National Rural Livelihood Mission (NRLM) (60:40),14
+95,Mahatma Gandhi National Rural Employment Guarantee Scheme (90:10),14
+96,Construction of Cremation Ground in the villages,14
+97,Mahatma Gandhi Sarbat Vikas Yojna (MGSVY) (Pendu Sarvjan Hitkari),14
+98,Liquid Waste Management in rural areas,14
+99,Solid Waste Management in rural areas.,14
+100,Rashtriya Gram Swaraj Abhiyan,14
+101,Smart Village Campaign,14
+102,Construction of Memorial Gates in the Villages,14
+103,Installation of Solar Lights in Rural Streets/Areas,14
+104,Infrastructure Gap filling optimum utilisation of work for the year 2020-21,14
+105,Modernization & Improvement of villages having more than 50% SC population,14
+106,Pardhan Mantri Awaas Yojana(G) (60:40) Earlier: Indira Awaas Yojana,14
+107,Subsidy to students of Government Schools visiting the Science City,15
+108,Empowerment and Socialeconomic development of SC Communities including girl science students through technology interventions in horticulture, biotechnology & related ventures,15
+109,Installation of Common Effluent Treatment Plant (CETP) of Capacity 50 Million Litre per day (MLD) for treatment of effluent from dying industries of Tajpur road and Rahon Road Cluster of Ludhiana. (CS:SS:SPV) (50:25:25),15
+110,Installation of Common Effluent Treatment Plant (CETP) of Capacity 40 Million Litre per day (MLD) for treatment of effluent from dying industries of Focal Point Phase-I to Phase VIII Cluster of Ludhiana. (CS:SS:SPV) (50:25:25),15
+111,Reduction in pollution caused by stubble burning by diversification of paddy to other crops,15
+112,Project for judicious use of available water and harvesting of rain water for enhancing irrigation potential in Punjab State (RIDFXVII) (NABARD) (95:5),16
+113,Project for laying of Underground Pipeline for irrigation from Sewage Treatment Plants of various Towns/Cities (NABARD-RIDFXVIII) (95:5),16
+114,Project for promotion of Micro Irrigation in Punjab (NABARDRIDF-20) (95:5),16
+115,Scheme for providing assured irrigation water to the waterlogged areas in the south western districts (NABARD-RIDF-XXI) (95:5),16
+116,Project for laying of Underground Pipeline for conveyance irrigation water in canal commands in 11 districts of Punjab (NABARD-RIDFXXII) (95:5),16
+117,Project for Utilization of treated water from sewerage treatment plant in Punjab (NABARD-RIDFXXV) 95.5,16
+118,Project for promotion of precision agriculture in Punjab (NABARD)- Micro Irrigation Fund (EarlierSolar electric hybrid community lift micro irrigation project from canal outlets in Punjab (RIDF-XXV),16
+119,Scheme for Comprehensive & Productive Utilization of treated waste water of Sewage Treatment Plants of Satluj, Beas & Ghaggar Catchments and other Towns/ Cities of Punjab,16
+120,Scheme for laying irrigation Infrastructure for productive use of water stored in village Ponds,16
+121,Scheme for construction of projects for Roof top rainwater harvesting and Artificial Recharging in Govt. Institutional kandi area,16
+122,Scheme for construction of Water Harvestinng -cum- natural recharging structures/check dams in sub-mountanous kandi area,16
+123,Assistance on Community & Individual Level Projects of Underground Pipeline for Judicious Use of Available Irrigation (Subsidies),16
+124,National Mission on Micro Irrigation (60:40) (PMKSY) (per drop more crop),16
+125,Pradhan Mantri Krishi sinchai Yozana for Soil and Water Conservation (60:40),16
+126,World Bank Scheme for Road Infrastructure (World Bank -State 85:15),17
+127,Upgradation, Construction and Repair of roads and Bridges (Special Repair of Plan Roads),17
+128,Central Road Fund (CRF),17
+129,Pradhan Mantri Gramin Sadak Yojana (PMGSY-I) (100%) (revised 60:40),17
+130,Pradhan Mantri Gramin Sadak Yojana (PMGSY-III) (60:40),17
+131,Construction of Shahpur Kandi Dam (AIBP)(60:40),18
+132,Project for relining of Sirhind Feeder from RD 119700-447927 (AIBP) (75:25) ACA(Top-Up) (RIDF - XVIII)(95:5),18
+133,Project for relining of Rajasthan Feeder from RD 179000-496000 (AIBP) (75:25)(GoI:Rajasthan),18
+134,Rehabilitation with concrete lining of Bist Doab Canal System (Minors)(RIDF XXII),18
+135,Renovation and Modernization of Regulators Structures in the State of Punjab.(RIDF XXII),18
+136,Converting Banur canal from Non Perennial to Perennial-RIDF-XXI (95:5) Construction of Banur weir and lining of Banur Canal SystemRIDF-XXIII.,18
+137,Construction of new 9 low Dams RIDF-XVI (95:5),18
+138,Repair and re-construction of distributaries/minors,18
+139,Installation and energization of Deep Tube wells for irrigation purpose in different blocks of district Patiala, Fatehgarh Sahib, SAS Nagar, Roopnagar, SBS Nagar, Hoshiarpur, Gurdaspur and Pathankot of Punjab State.,18
+140,Construction of field channels on Kotla Branch Phase-II system (AIBP) (60:40) (RIDF-XIX) (95:5),18
+141,Const. of Embankments and Widening of River Ghaggar from Khanauri to Karail in District Sangrur (RIDF-XII) (95:5),18
+142,Measures to tackle water logging and floods in Punjab state RIDFXIX (95:5),18
+143,Integrated Project to address water logging problem in South-Western Districts of Punjab-ACA for Drainage (75:25),18
+144,Construction of Flood Protection Works along left side and right sides of River Beas in District Gurdaspur, Hoshiarpur and Kapurthala (50:50) (AIBP) RIDFXXIV,18
+145,Counter Protective measures on left side of River Ravi (100%),18
+146,Swan River Flood Management and Integrated Land Development Project starting from Punjab Boundary (D/S of Santokhgarh Bridge) to its confluence point with River Satluj at U/S Thana Bridge Near Shri Anandpur Sahib including D/S Flood protection works in District Roop Nagar Punjab) (50:50),18
+147,Concrete Lining of Arnauli Disty System,18
+148,Concrete Lining of Bhawanigarh Disty System,18
+149,Concrete Lining of Nadampur Disty System,18
+150,Amritsar Sewerage Project funded by JICA (for land acquisition) (JICA:SS) (76.72:23.28),19
+151,Provision/Augmentation of water supply and sewerage facilities in the specific towns including second part 9(ii) of the scheme,19
+152,Installation of Reverse Osmosis(RO) systems to provide drinking water in heavy metals affected districts of Punjab RIDFXXII(NABARD)(85:15),19
+153,Second Punjab Rural Water Supply and Sanitation Sector Improvement Programme - World Bank Assisted Project (70:30) (WB:SS),19
+154,Provision of piped water supply in rural areas of Punjab - RIDF XXIII(85:15) (Improvement/ augmentation of Rural Piped Water Supply schemes in different districts of State under RIDF-XXIII (85:15)),19
+155,Providing/Upgradation of existing 58Rural Piped Water Supply Schemes in Patiala under NABARD RIDF-XXVII,19
+156,Providing piped water supply schemes for 700 water scarcity/quality affected villages of Ferozepur, Fazilka, Hoshiarpur and Rupnagar RIDF-XXVII,19
+157,Special assistance for mitigation of drinking water problems in the habitations affected with arsenic and fluoride (100% CS,19
+158,Augmentation/enhancement/  replacement and Rehabilitations of existing infrastructure in Rural Water Supply & sewerage Schemes.,19
+159,State Share for providing surface based piped water supply scheme in Arsenic / Fluoride affected border areas of State under RIDF-XXV(i),19
+160,Swachh Bharat Abhiyan (Gramin) (60:40),19
+161,Swachh Bharat Abhiyan (Gramin) (Incentive fund),19
+162,National Rural Drinking Water Supply Programme (NRDWP) Jal Jeevan Mission (JJM),19

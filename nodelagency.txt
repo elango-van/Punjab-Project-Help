@@ -1,0 +1,8 @@
+NodalAgencyCode,NodalAgencyName
+1,Department of Agriculture
+2,Department of Forests & Wildlife Preservation
+3,Department of Irrigation
+4,Department of Science, Technology and Environment
+5,Local Government
+6,Punjab Energy Development Agency
+7,Punjab State Power Corporation Limited 

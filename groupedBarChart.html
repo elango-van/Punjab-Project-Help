@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <style>
+        .d3-tip {
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
+        }
+
+        /* Creates a small triangle extender for the tooltip */
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+            content: "\25BC";
+            position: absolute;
+            text-align: center;
+        }
+
+        /* Style northward tooltips differently */
+        .d3-tip.n:after {
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
+    <script>
+
+        // set the dimensions and margins of the graph
+        var margin = { top: 10, right: 30, bottom: 20, left: 50 },
+            width = 460 - margin.left - margin.right,
+            height = 400 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        var svg = d3.select("#my_dataviz")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function (d) {
+                console.log(d)
+                return "<strong>Name:</strong>" + d.key + "<br><strong>Value:</strong>" + d.value;
+            });
+
+        svg.call(tip);
+
+        // Parse the Data
+        // d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_stacked.csv", function (data) {
+        d3.csv("xxx_data_stacked.csv", function (data) {
+            console.log(data);
+            console.log(typeof data);
+            // List of subgroups = header of the csv files = soil condition here
+            var subgroups = data.columns.slice(1)
+            // console.log(data.columns);
+            // console.log(data.columns.slice(1));
+            // List of groups = species here = value of the first column called group -> I show them on the X axis
+            var groups = d3.map(data, function (d) { return (d.group) }).keys()
+            //'Nitrogen', 'normal', 'stress'
+            // Add X axis
+            var x = d3.scaleBand()
+                .domain(groups)
+                .range([0, width])
+                .padding([0.2])
+            svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x).tickSize(0));
+
+
+            // Add Y axis
+            var y = d3.scaleLinear()
+                .domain([0, 40])
+                .range([height, 0]);
+            svg.append("g")
+                .call(d3.axisLeft(y));
+
+            // Another scale for subgroup position?
+            var xSubgroup = d3.scaleBand()
+                .domain(subgroups)
+                .range([0, x.bandwidth()])
+                .padding([0.05])
+
+            // color palette = one color per subgroup
+            var color = d3.scaleOrdinal()
+                .domain(subgroups)
+                .range(['#e41a1c', '#377eb8', '#4daf4a'])
+
+            // Show the bars
+            svg.append("g")
+                .selectAll("g")
+                // Enter in data = loop group per group
+                .data(data)
+                .enter()
+                .append("g")
+                .attr("transform", function (d) { return "translate(" + x(d.group) + ",0)"; })
+                .selectAll("rect")
+                .data(function (d) { return subgroups.map(function (key) { return { key: key, value: d[key] }; }); })
+                .enter().append("rect")
+                .attr("x", function (d) { return xSubgroup(d.key); })
+                .attr("y", function (d) { return y(d.value); })
+                .attr("width", xSubgroup.bandwidth())
+                .attr("height", function (d) { return height - y(d.value); })
+                .attr("fill", function (d) { return color(d.key); })
+                .on('mouseover', tip.show)
+                .on('mouseout', tip.hide);
+
+            var keys = data.columns.slice(1);
+            var legend = svg.append("g")
+                .attr("font-family", "sans-serif")
+                .attr("font-size", 10)
+                .attr("text-anchor", "end")
+                .selectAll("g")
+                // .data(subgroups.slice().reverse())
+                .data(subgroups)
+                .enter().append("g")
+                .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
+
+            legend.append("rect")
+                .attr("x", width - 19)
+                .attr("width", 19)
+                .attr("height", 19)
+                .attr("fill", color);
+
+            legend.append("text")
+                .attr("x", width - 24)
+                .attr("y", 9.5)
+                .attr("dy", "0.32em")
+                .text(function (d) { return d; });
+        })
+
+    </script>
+</body>
+
+</html>

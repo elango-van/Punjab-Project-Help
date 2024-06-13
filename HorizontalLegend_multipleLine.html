@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script> -->
+    
+</head>
+
+<body>
+    <svg width="500" height="100"></svg>
+
+    <script>
+        var data = ["Cat A", "Cat B", "Cat C", "Cat D", "Dog A", "Dog B", "Dog C", "Dog D"];
+        var n = data.length / 2;
+        var itemWidth = 80;
+        var itemHeight = 18;
+
+        var svg = d3.select("svg");
+
+        var color = d3.scale.category10();
+
+        var legend = svg.selectAll(".legend")
+            .data(data)
+            .enter()
+            .append("g")
+            .attr("transform", function (d, i) { return "translate(" + i % n * itemWidth + "," + Math.floor(i / n) * itemHeight + ")"; })
+            .attr("class", "legend");
+
+        var rects = legend.append('rect')
+            .attr("width", 15)
+            .attr("height", 15)
+            .attr("fill", function (d, i) { return color(i); });
+
+        var text = legend.append('text')
+            .attr("x", 15)
+            .attr("y", 12)
+            .text(function (d) { return d; });
+    </script>
+</body>
+
+</html>

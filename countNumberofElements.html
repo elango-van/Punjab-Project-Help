@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="color:green">GeeksforGeeks</h1>
+
+    <h3>
+        Click the button to count all<br>
+        children the div element
+    </h3>
+
+    <h5>Count all child elements of <ul> elements</h5>
+    <ul id="parentID">
+        <li>First element</li>
+        <li>Second element</li>
+        <li>Third element</li>
+        <li>Fourth element</li>
+    </ul>
+
+    <button onclick="myGeeks()">
+        Click Here!
+    </button>
+
+    <h5 id="GFG"></h5>
+
+    <script>
+        // This function count the child elements 
+        function myGeeks() {
+            var count = document.getElementById(
+                "parentID").childElementCount;
+
+            document.getElementById("GFG").innerHTML
+                = "Total Number of Child node: "
+                + count;
+        } 
+    </script>
+
+</body>
+
+</html>

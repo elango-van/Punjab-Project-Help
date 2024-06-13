@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pagination-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            justify-content: center;
+        }
+
+        .pagination-number,
+        .pagination-button {
+            font-size: 1.1rem;
+            background-color: transparent;
+            border: none;
+            margin: 0.25rem 0.25rem;
+            cursor: pointer;
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: .2rem;
+        }
+
+        .pagination-number:hover,
+        .pagination-button:not(.disabled):hover {
+            background: #fff;
+        }
+
+        .pagination-number.active {
+            color: #fff;
+            background: #0085b6;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="paginated-list" aria-live="polite">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        ...
+    </ul>
+
+    <!-- We use the aria-live property so assistive technologies know when the content in this region has been updated and announce the new content to the reader.  -->
+
+    <nav class="pagination-container">
+        <button class="pagination-button" id="prev-button" title="Previous page" aria-label="Previous page">
+            &lt;
+        </button>
+
+        <div id="pagination-numbers">
+        </div>
+
+        <button class="pagination-button" id="next-button" title="Next page" aria-label="Next page">
+            &gt;
+        </button>
+    </nav>
+    <script>
+        const paginationNumbers = document.getElementById("pagination-numbers");
+        const paginatedList = document.getElementById("paginated-list");
+        const listItems = paginatedList.querySelectorAll("li");
+        const nextButton = document.getElementById("next-button");
+        const prevButton = document.getElementById("prev-button");
+
+        const paginationLimit = 10;
+        const pageCount = Math.ceil(listItems.length / paginationLimit);
+        let currentPage;
+        const appendPageNumber = (index) => {
+            const pageNumber = document.createElement("button");
+            pageNumber.className = "pagination-number";
+            pageNumber.innerHTML = index;
+            pageNumber.setAttribute("page-index", index);
+            pageNumber.setAttribute("aria-label", "Page " + index);
+            paginationNumbers.appendChild(pageNumber);
+        };
+        const getPaginationNumbers = () => {
+            for (let i = 1; i <= pageCount; i++) {
+                appendPageNumber(i);
+            }
+        };
+        window.addEventListener("load", () => {
+            getPaginationNumbers();
+        });
+        // const setCurrentPage = (pageNum) => {
+        //     currentPage = pageNum;
+        // };
+
+        // const setCurrentPage = (pageNum) => {
+        //     currentPage = pageNum;
+
+        //     const prevRange = (pageNum - 1) * paginationLimit;
+        //     const currRange = pageNum * paginationLimit;
+        // };
+
+        // const setCurrentPage = (pageNum) => {
+        //     currentPage = pageNum;
+
+        //     const prevRange = (pageNum - 1) * paginationLimit;
+        //     const currRange = pageNum * paginationLimit;
+        //     listItems.forEach((item, index) => {
+        //         item.classList.add("hidden");
+        //         if (index >= prevRange && index < currRange) {
+        //             item.classList.remove("hidden");
+        //         }
+        //     });
+        // };
+
+        jsonData.forEach((item, index) => {
+            elementContainer.innerHTML = ''
+            if (index >= prevRange && index < currRange) {
+                elementContainer.appendChild(item)
+            }
+        });
+
+        // window.addEventListener("load", () => {
+        //     getPaginationNumbers();
+        //     setCurrentPage(1);
+        // });
+
+
+        // window.addEventListener("load", () => {
+        //     getPaginationNumbers();
+        //     setCurrentPage(1);
+        //     document.querySelectorAll(".pagination-number").forEach((button) => {
+        //         const pageIndex = Number(button.getAttribute("page-index"));
+        //         if (pageIndex) {
+        //             button.addEventListener("click", () => {
+        //                 setCurrentPage(pageIndex);
+        //             });
+        //         }
+        //     });
+        // });
+
+        const handleActivePageNumber = () => {
+            document.querySelectorAll(".pagination-number").forEach((button) => {
+                button.classList.remove("active");
+
+                const pageIndex = Number(button.getAttribute("page-index"));
+                if (pageIndex == currentPage) {
+                    button.classList.add("active");
+                }
+            });
+        };
+
+        // const setCurrentPage = (pageNum) => {
+        //     currentPage = pageNum;
+
+        //     handleActivePageNumber();
+        //     const prevRange = (pageNum - 1) * paginationLimit;
+        //     const currRange = pageNum * paginationLimit;
+        //     listItems.forEach((item, index) => {
+        //         item.classList.add("hidden");
+        //         if (index >= prevRange && index < currRange) {
+        //             item.classList.remove("hidden");
+        //         }
+        //     });
+        // };
+
+        window.addEventListener("load", () => {
+            getPaginationNumbers();
+            setCurrentPage(1);
+            prevButton.addEventListener("click", () => {
+                setCurrentPage(currentPage - 1);
+            });
+            nextButton.addEventListener("click", () => {
+                setCurrentPage(currentPage + 1);
+            });
+            document.querySelectorAll(".pagination-number").forEach((button) => {
+                const pageIndex = Number(button.getAttribute("page-index"));
+                if (pageIndex) {
+                    button.addEventListener("click", () => {
+                        setCurrentPage(pageIndex);
+                    });
+                }
+            });
+        });
+
+        const disableButton = (button) => {
+            button.classList.add("disabled");
+            button.setAttribute("disabled", true);
+        };
+        const enableButton = (button) => {
+            button.classList.remove("disabled");
+            button.removeAttribute("disabled");
+        };
+        const handlePageButtonsStatus = () => {
+            if (currentPage === 1) {
+                disableButton(prevButton);
+            } else {
+                enableButton(prevButton);
+            }
+            if (pageCount === currentPage) {
+                disableButton(nextButton);
+            } else {
+                enableButton(nextButton);
+            }
+        };
+
+        const setCurrentPage = (pageNum) => {
+            currentPage = pageNum;
+            handleActivePageNumber();
+            handlePageButtonsStatus();
+
+            const prevRange = (pageNum - 1) * paginationLimit;
+            const currRange = pageNum * paginationLimit;
+            listItems.forEach((item, index) => {
+                item.classList.add("hidden");
+                if (index >= prevRange && index < currRange) {
+                    item.classList.remove("hidden");
+                }
+            });
+        };
+
+    </script>
+</body>
+
+</html>
