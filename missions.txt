@@ -1,9 +1,0 @@
-MissionCode,MissionName
-1,Agriculture Mission
-2,Energy Efficiency
-3,Green Mission
-4,Knowledge Mission
-5,Solar Mission
-6,Sustainable Habitats
-7,Sustaining Himalayan Ecosystem and Biodiversity
-8,Water Mission

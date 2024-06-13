@@ -3,7 +3,7 @@ $connection = false;
 $host= "localhost";
 $root= "root";
 $pass = "inrm@c23";
-$dbname = "giz_eucd";
+$dbname = "DatabaseName";
 $conn = mysqli_connect($host, $root, $pass, $dbname);
 if (!$conn) {
     echo "Connection failed!";
